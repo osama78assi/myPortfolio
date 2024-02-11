@@ -1,23 +1,44 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "../../contexts/ThemeProvider";
-import { Button, Col, Stack } from "react-bootstrap";
+import { Button, Stack } from "react-bootstrap";
 
+// eslint-disable-next-line
 function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
   const [showPopup, setShowPopup] = useState(false);
   const [height, setHeight] = useState(0);
   const { isDarkMode } = useTheme();
+  const [imgUrl, setImgUrl] = useState("");
   const elementRef = useRef(null);
 
   // Calc Height Of The Img When Resize
   useEffect(() => {
     function handleHeight() {
-      setHeight(elementRef.current.clientWidth / 2);
+      if(imgUrl == "") {
+        setHeight("300px");
+      } else {
+        setHeight(elementRef.current.clientWidth / 2);
+      }
     }
     handleHeight();
     window.addEventListener("resize", handleHeight);
 
     return () => window.removeEventListener("resize", handleHeight);
-  }, []);
+  }, [imgUrl]);
+
+  useEffect(() => {
+    const observer = function (entries, observer) {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        setImgUrl(imgSrc);
+        observer.unobserve(elementRef.current);
+      }
+    };
+    const observerImg = new IntersectionObserver(observer, {
+      root: null,
+      threshold: 0.1,
+    });
+    observerImg.observe(elementRef.current);
+  }, [imgSrc]);
 
   return (
     <div
@@ -28,10 +49,10 @@ function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
       <div
         className={`main-transition cursor-pointer p-2 ${
           isDarkMode ? "my-dark-2" : "my-light-2"
-        } rounded-2`}
+        } rounded-2 h-100`}
         onClick={() => setShowPopup(true)}
       >
-        <img src={imgSrc} alt={imgAlt} className="w-100 h-100 rounded-2" />
+        <img src={imgUrl} alt={imgAlt} className="w-100 h-100 rounded-2" />
       </div>
 
       <div
@@ -46,6 +67,7 @@ function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
           <a
             className="link-opacity-100 text-light"
             target="_blank"
+            rel="noreferrer"
             href={projectUrl}
           >
             See The App
@@ -53,6 +75,7 @@ function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
           <a
             className="link-opacity-100 text-light"
             target="_blank"
+            rel="noreferrer"
             href={codeUrl}
           >
             See The Code

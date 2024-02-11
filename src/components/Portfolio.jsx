@@ -17,7 +17,7 @@ function Portfolio({ className }) {
         <ProjectTitle title={"React JS"} className={"ps-4"} />
         <Row className="row-gap-2 content">
           <Project
-            imgSrc={"/public/fastPizza.png"}
+            imgSrc={"/fastPizza.png"}
             imgAlt={"project"}
             projectUrl={"https://osama78assi.github.io/fastPizza/"}
             codeUrl={"https://github.com/osama78assi/fastPizza"}

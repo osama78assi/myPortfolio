@@ -27,7 +27,10 @@ function App() {
     return () => window.removeEventListener("resize", handelMedia);
   }, []);
 
-  function handelCloseNav() {
+  function handelCloseNav(e) {
+    if (e.target.closest(".sidebar-toggler")) {
+      return;
+    }
     if (toggleSide == false) {
       setToggleSide(true);
     }
@@ -43,9 +46,7 @@ function App() {
           className={toggleSide ? "l-n100" : ""}
         />
         <Main fun={handelCloseNav}>
-          {showBtn && (
-            <SidebarToggler onToggle={setToggleSide} toggled={toggleSide} />
-          )}
+          {showBtn && <SidebarToggler onToggle={setToggleSide} />}
           <Home className={activePage == 1 ? "l-0 z-4" : "l-100 z-1"}></Home>
           <About className={activePage == 2 ? "l-0 z-4" : "l-100 z-1"}></About>
           <Portfolio
