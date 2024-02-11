@@ -1,17 +1,15 @@
 import { Container, Row } from "react-bootstrap";
-import Main from "./components/Main";
-import Sidebar from "./components/Sidebar";
-import { useTheme } from "./contexts/ThemeProvider";
+import Main from "./components/globalComponents/Main";
+import Sidebar from "./components/globalComponents/Sidebar";
 import { useEffect, useState } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
-import SidebarToggler from "./components/SidebarToggler";
-import Toolbar from "./components/Toolbar";
+import SidebarToggler from "./components/globalComponents/SidebarToggler";
+import Toolbar from "./components/globalComponents/Toolbar";
 
 function App() {
-  const { isDarkMode, setIsDarkMode } = useTheme();
   const [activePage, setActivePage] = useState(1);
   const [toggleSide, setToggleSide] = useState(true);
   const [showBtn, setShowBtn] = useState(false);
@@ -19,7 +17,6 @@ function App() {
   useEffect(() => {
     function handelMedia() {
       if (window.matchMedia("(max-width: 830px)").matches) {
-        setToggleSide(false);
         setShowBtn(true);
       } else {
         setShowBtn(false);
@@ -30,6 +27,12 @@ function App() {
     return () => window.removeEventListener("resize", handelMedia);
   }, []);
 
+  function handelCloseNav() {
+    if (toggleSide == false) {
+      setToggleSide(true);
+    }
+  }
+
   return (
     <Container fluid className={"overflow-hidden position-relative"}>
       <Toolbar />
@@ -39,7 +42,7 @@ function App() {
           setAct={setActivePage}
           className={toggleSide ? "l-n100" : ""}
         />
-        <Main>
+        <Main fun={handelCloseNav}>
           {showBtn && (
             <SidebarToggler onToggle={setToggleSide} toggled={toggleSide} />
           )}

@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeProvider";
 import Header from "./contactComponents/Header";
-import PageTitle from "./PageTitle";
+import PageTitle from "./globalComponents/PageTitle";
 import ContactItem from "./contactComponents/ContactItem";
 import { faMessage, faPhone } from "@fortawesome/free-solid-svg-icons";
 

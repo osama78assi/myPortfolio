@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Stack } from "react-bootstrap";
-import { useTheme } from "../contexts/ThemeProvider";
+import { useTheme } from "../../contexts/ThemeProvider";
 import { faGear, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function ToolbarBtns({ onToggle }) {

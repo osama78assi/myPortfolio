@@ -1,23 +1,8 @@
 import { Button, Stack } from "react-bootstrap";
-import { useTheme } from "../contexts/ThemeProvider";
-import { useEffect, useState } from "react";
+import { useTheme } from "../../contexts/ThemeProvider";
 
 function ToolbarColors() {
   const { isDarkMode, setTheme } = useTheme();
-  const [dir, setDir] = useState("horizontal");
-
-  useEffect(() => {
-    function handelMedia() {
-      if (window.matchMedia("(max-width: 300px)").matches) {
-        setDir("vertical");
-      } else {
-        setDir("horizontal");
-      }
-    }
-    handelMedia();
-    window.addEventListener("resize", handelMedia);
-    return () => window.removeEventListener("resize", handelMedia);
-  });
 
   return (
     <Stack
@@ -27,9 +12,8 @@ function ToolbarColors() {
     >
       <p className="fw-bold fs-6">Theme Color</p>
       <Stack
-        direction={dir}
-        gap={dir == "horizontal" ? 1 : 3}
-        className={dir == "vertical" ? "align-items-center" : ""}
+        direction={"horizontal"}
+        gap={1}
       >
         <Button
           className="color bg-red"

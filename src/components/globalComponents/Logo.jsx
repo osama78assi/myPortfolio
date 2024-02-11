@@ -1,4 +1,4 @@
-import { useTheme } from "../contexts/ThemeProvider";
+import { useTheme } from "../../contexts/ThemeProvider";
 
 function Logo() {
   const { theme } = useTheme();

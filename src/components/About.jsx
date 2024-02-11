@@ -1,6 +1,6 @@
 import { Col, Row, Stack } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeProvider";
-import PageTitle from "./PageTitle";
+import PageTitle from "./globalComponents/PageTitle";
 import Details from "./aboutComponents/Details";
 import Ranges from "./aboutComponents/Ranges";
 
@@ -27,7 +27,6 @@ function About({ className }) {
           <Ranges />
         </Col>
       </Row>
-      
     </Stack>
   );
 }

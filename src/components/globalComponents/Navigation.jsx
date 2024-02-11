@@ -1,5 +1,5 @@
 import { Button, Stack, ThemeProvider } from "react-bootstrap";
-import { useTheme } from "../contexts/ThemeProvider";
+import { useTheme } from "../../contexts/ThemeProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,

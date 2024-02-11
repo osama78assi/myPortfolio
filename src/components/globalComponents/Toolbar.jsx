@@ -1,7 +1,7 @@
 import { Stack, ThemeProvider } from "react-bootstrap";
 import ToolbarBtns from "./ToolbarBtns";
 import ToolbarColors from "./ToolbarColors";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Toolbar() {
   const [hide, setHide] = useState(true);

@@ -1,7 +1,7 @@
 import { Container, Row, Stack } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeProvider";
 import Project from "./portfolioComponents/Project";
-import PageTitle from "./PageTitle";
+import PageTitle from "./globalComponents/PageTitle";
 import ProjectTitle from "./portfolioComponents/ProjectTitle";
 
 // eslint-disable-next-line

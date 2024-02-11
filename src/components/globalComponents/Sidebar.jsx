@@ -1,7 +1,7 @@
 import { Col, Stack } from "react-bootstrap";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
-import { useTheme } from "../contexts/ThemeProvider";
+import { useTheme } from "../../contexts/ThemeProvider";
 
 function Sidebar({ act, setAct, className }) {
   const { isDarkMode } = useTheme();
