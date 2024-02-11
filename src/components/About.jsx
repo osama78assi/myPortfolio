@@ -13,7 +13,7 @@ function About({ className }) {
     <Stack className={theClassName}>
       <PageTitle title={"About Me"} />
       <p className="px-4 mb-4">
-        I'm Osama Assi, web frontend developer and ITE student, I have
+        I&apos;m Osama Assi, web frontend developer and ITE student, I have
         experience of creating a user friendly interface and single page
         application with React & React Router, I have basic knowledge about the
         backend and how it works with database, API architectures and well
