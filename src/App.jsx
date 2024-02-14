@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import Main from "./components/globalComponents/Main";
 import Sidebar from "./components/globalComponents/Sidebar";
-import { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
