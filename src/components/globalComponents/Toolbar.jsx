@@ -1,10 +1,10 @@
 import { Stack, ThemeProvider } from "react-bootstrap";
 import ToolbarBtns from "./ToolbarBtns";
 import ToolbarColors from "./ToolbarColors";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useTheme } from "../../contexts/ThemeProvider";
 
-function Toolbar() {
+const Toolbar = memo(function Toolbar() {
   const [hide, setHide] = useState(true);
   const { isDarkMode } = useTheme();
 
@@ -22,6 +22,6 @@ function Toolbar() {
       </ThemeProvider>
     </div>
   );
-}
+});
 
 export default Toolbar;

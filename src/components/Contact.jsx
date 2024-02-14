@@ -4,8 +4,10 @@ import Header from "./contactComponents/Header";
 import PageTitle from "./globalComponents/PageTitle";
 import ContactItem from "./contactComponents/ContactItem";
 import { faMessage, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { memo } from "react";
 
-function Contact({ className }) {
+// eslint-disable-next-line
+const Contact = memo(function Contact({ className }) {
   const { isDarkMode } = useTheme();
   const theClassName = `position-absolute main-transition w-100 h-100 overflow-auto ${className} ${
     isDarkMode ? "my-dark-1" : "my-light-1"
@@ -32,6 +34,5 @@ function Contact({ className }) {
       </Row>
     </Container>
   );
-}
-
+});
 export default Contact;

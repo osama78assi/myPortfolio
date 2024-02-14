@@ -3,9 +3,10 @@ import { useTheme } from "../contexts/ThemeProvider";
 import Project from "./portfolioComponents/Project";
 import PageTitle from "./globalComponents/PageTitle";
 import ProjectTitle from "./portfolioComponents/ProjectTitle";
+import { memo } from "react";
 
 // eslint-disable-next-line
-function Portfolio({ className }) {
+const Portfolio = memo(function Portfolio({ className }) {
   const { isDarkMode } = useTheme();
   const theClassName = `position-absolute main-transition w-100 h-100 overflow-auto ${className} ${
     isDarkMode ? "my-dark-1" : "my-light-1"
@@ -116,6 +117,6 @@ function Portfolio({ className }) {
       </Container>
     </Stack>
   );
-}
+});
 
 export default Portfolio;

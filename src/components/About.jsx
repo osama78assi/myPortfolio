@@ -3,9 +3,10 @@ import { useTheme } from "../contexts/ThemeProvider";
 import PageTitle from "./globalComponents/PageTitle";
 import Details from "./aboutComponents/Details";
 import Ranges from "./aboutComponents/Ranges";
+import { memo } from "react";
 
 // eslint-disable-next-line
-function About({ className }) {
+const About = memo(function About({ className }) {
   const { isDarkMode } = useTheme();
   const theClassName = `position-absolute main-transition w-100 h-100 overflow-auto ${className} ${
     isDarkMode ? "my-dark-1" : "my-light-1"
@@ -30,6 +31,6 @@ function About({ className }) {
       </Row>
     </Stack>
   );
-}
+});
 
 export default About;
