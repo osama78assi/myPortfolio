@@ -1,9 +1,9 @@
 import { Col, Stack } from "react-bootstrap";
 import Logo from "./Logo";
-import Navigation from "./Navigation";
 import { useTheme } from "../../contexts/ThemeProvider";
 
-function Sidebar({ act, setAct, className }) {
+// eslint-disable-next-line
+function Sidebar({ className, children }) {
   const { isDarkMode } = useTheme();
   return (
     <Col
@@ -16,7 +16,7 @@ function Sidebar({ act, setAct, className }) {
     >
       <Stack className="sidebar-gap">
         <Logo />
-        <Navigation act={act} setAct={setAct} />
+        {children}
       </Stack>
     </Col>
   );

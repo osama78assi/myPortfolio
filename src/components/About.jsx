@@ -4,6 +4,7 @@ import PageTitle from "./globalComponents/PageTitle";
 import Details from "./aboutComponents/Details";
 import Ranges from "./aboutComponents/Ranges";
 
+// eslint-disable-next-line
 function About({ className }) {
   const { isDarkMode } = useTheme();
   const theClassName = `position-absolute main-transition w-100 h-100 overflow-auto ${className} ${

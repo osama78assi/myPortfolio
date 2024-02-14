@@ -2,9 +2,10 @@ import { Col, Row } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeProvider";
 import Frame from "./homeComponents/Frame";
 import Landing from "./homeComponents/Landing";
+import { memo } from "react";
 
 // eslint-disable-next-line
-function Home({ className }) {
+const Home = memo(function Home({ className }) {
   const { isDarkMode } = useTheme();
   const theClassName = `position-absolute main-transition w-100 h-100 overflow-auto ${className} ${
     isDarkMode ? "my-dark-1" : "my-light-1"
@@ -27,6 +28,6 @@ function Home({ className }) {
       </Col>
     </Row>
   );
-}
+});
 
 export default Home;

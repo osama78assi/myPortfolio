@@ -5,15 +5,15 @@ import { Button, Stack } from "react-bootstrap";
 // eslint-disable-next-line
 function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
   const [showPopup, setShowPopup] = useState(false);
+  const [showImg, setShowImg] = useState(false);
   const [height, setHeight] = useState(0);
   const { isDarkMode } = useTheme();
-  const [imgUrl, setImgUrl] = useState("");
   const elementRef = useRef(null);
 
   // Calc Height Of The Img When Resize
   useEffect(() => {
     function handleHeight() {
-      if(imgUrl == "") {
+      if (showImg) {
         setHeight("300px");
       } else {
         setHeight(elementRef.current.clientWidth / 2);
@@ -23,13 +23,13 @@ function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
     window.addEventListener("resize", handleHeight);
 
     return () => window.removeEventListener("resize", handleHeight);
-  }, [imgUrl]);
+  }, [showImg]);
 
   useEffect(() => {
     const observer = function (entries, observer) {
       const [entry] = entries;
       if (entry.isIntersecting) {
-        setImgUrl(imgSrc);
+        setShowImg(true);
         observer.unobserve(elementRef.current);
       }
     };
@@ -38,7 +38,7 @@ function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
       threshold: 0.1,
     });
     observerImg.observe(elementRef.current);
-  }, [imgSrc]);
+  }, [showImg]);
 
   return (
     <div
@@ -52,7 +52,9 @@ function Project({ imgSrc, imgAlt, projectUrl, codeUrl, details }) {
         } rounded-2 h-100`}
         onClick={() => setShowPopup(true)}
       >
-        <img src={imgUrl} alt={imgAlt} className="w-100 h-100 rounded-2" />
+        {showImg && (
+          <img src={imgSrc} alt={imgAlt} className="w-100 h-100 rounded-2" />
+        )}
       </div>
 
       <div
