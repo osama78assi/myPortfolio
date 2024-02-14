@@ -1,4 +1,3 @@
-import { unmountComponentAtNode } from "react-dom";
 import { Container, Row } from "react-bootstrap";
 import Main from "./components/globalComponents/Main";
 import Sidebar from "./components/globalComponents/Sidebar";
