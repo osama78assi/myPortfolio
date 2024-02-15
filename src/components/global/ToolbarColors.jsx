@@ -9,12 +9,10 @@ function ToolbarColors() {
       className={`main-transition ${
         isDarkMode ? "my-dark-2" : "my-light-2"
       } rounded-2 p-2`}
+      gap={1}
     >
-      <p className="fw-bold fs-6">Theme Color</p>
-      <Stack
-        direction={"horizontal"}
-        gap={1}
-      >
+      <p className="fw-bold fs-custom">Theme Color</p>
+      <Stack direction={"horizontal"} gap={1}>
         <Button
           className="color bg-red"
           onClick={() => setTheme("red")}

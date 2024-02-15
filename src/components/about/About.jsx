@@ -1,8 +1,8 @@
 import { Col, Row, Stack } from "react-bootstrap";
-import { useTheme } from "../contexts/ThemeProvider";
-import PageTitle from "./globalComponents/PageTitle";
-import Details from "./aboutComponents/Details";
-import Ranges from "./aboutComponents/Ranges";
+import { useTheme } from "../../contexts/ThemeProvider";
+import PageTitle from "../global/PageTitle";
+import Details from "./Details";
+import Ranges from "./Ranges";
 import { memo } from "react";
 
 // eslint-disable-next-line

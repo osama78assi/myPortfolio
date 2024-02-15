@@ -263,7 +263,7 @@
 }
 
 .hide {
-  right: -165px !important;
+  right: -150px !important;
 }
 
 @media (max-width: 830px) {
@@ -282,10 +282,19 @@
   }
 }
 
-/* Themebar */
+/* Theme Bar */
 
-.w-fit {
-  width: fit-content;
+.w-custome {
+  width: 40px;
+  height: 40px;
+}
+
+.fs-custom {
+  font-size: 1.2rem;
+}
+
+.w-200 {
+  width: 200px;
 }
 
 .color {
@@ -333,7 +342,7 @@
     right: 0 !important;
   }
   .hide {
-    right: -160px !important;
+    right: -150px !important;
   }
 }
 

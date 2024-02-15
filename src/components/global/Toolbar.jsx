@@ -2,20 +2,18 @@ import { Stack, ThemeProvider } from "react-bootstrap";
 import ToolbarBtns from "./ToolbarBtns";
 import ToolbarColors from "./ToolbarColors";
 import { memo, useState } from "react";
-import { useTheme } from "../../contexts/ThemeProvider";
 
 const Toolbar = memo(function Toolbar() {
   const [hide, setHide] = useState(true);
-  const { isDarkMode } = useTheme();
 
   return (
     <div
-      className={`tool main-transition position-absolute ${
+      className={`tool main-transition w-200 position-absolute ${
         hide ? "hide" : ""
-      } ${isDarkMode ? "my-dark-1" : "my-light-1"}`}
+      }`}
     >
       <ThemeProvider prefixes={{ btn: "round-btn" }}>
-        <Stack direction="horizontal" gap={3}>
+        <Stack direction="horizontal" className="w-100" gap={2}>
           <ToolbarBtns onToggle={setHide} />
           <ToolbarColors />
         </Stack>

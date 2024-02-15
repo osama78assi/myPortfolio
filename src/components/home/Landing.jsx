@@ -11,14 +11,15 @@ function Landing() {
         </span>
       </h1>
       <h2 className="mb-3 main-transition">
-        I'm a{" "}
+        I&apos;m a{" "}
         <span className={`font-bold text-${theme} main-transition`}>
           Web Frontend Developer
         </span>
       </h2>
       <p className="main-transition">
-        I'm a web frontend developer with experience about creating a responsive
-        single page application and problem solving skills and many more...
+        I&apos;m a web frontend developer with experience about creating a
+        responsive single page application and problem solving skills and many
+        more...
       </p>
     </div>
   );

@@ -1,15 +1,15 @@
 import { Container, Row } from "react-bootstrap";
-import Main from "./components/globalComponents/Main";
-import Sidebar from "./components/globalComponents/Sidebar";
+import Main from "./components/global/Main";
+import Sidebar from "./components/global/Sidebar";
 import { useEffect, useLayoutEffect, useState } from "react";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Portfolio from "./components/Portfolio";
-import SidebarToggler from "./components/globalComponents/SidebarToggler";
-import Toolbar from "./components/globalComponents/Toolbar";
-import Navigation from "./components/globalComponents/Navigation";
-import NavigationItem from "./components/globalComponents/NavigationItem";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+import Portfolio from "./components/portfolio/Portfolio";
+import SidebarToggler from "./components/global/SidebarToggler";
+import Toolbar from "./components/global/Toolbar";
+import Navigation from "./components/global/Navigation";
+import NavigationItem from "./components/global/NavigationItem";
 import {
   faBriefcase,
   faComments,
@@ -30,8 +30,8 @@ function App() {
   const [curClass, setCurClass] = useState("l-100 z-4");
 
   useEffect(() => {
+    initialRender = 0;
     function handelMedia() {
-      initialRender = 0;
       if (window.matchMedia("(max-width: 830px)").matches) {
         setShowBtn(true);
       } else {
@@ -40,6 +40,7 @@ function App() {
     }
     window.addEventListener("resize", handelMedia);
     handelMedia();
+    setCurClass("l-0 z-4")
     return () => window.removeEventListener("resize", handelMedia);
   }, []);
 
@@ -47,10 +48,12 @@ function App() {
   // Paint The Component In The Screen
   useLayoutEffect(() => {
     let classTimer = null;
-    // Timer For Return The Element To Original Position
-    classTimer = setTimeout(() => {
-      setCurClass("l-0 z-4");
-    }, 100);
+    if (!initialRender) {
+      // Timer For Return The Element To Original Position
+      classTimer = setTimeout(() => {
+        setCurClass("l-0 z-4");
+      }, 100);
+    }
     // That Runs After Each Re-render (Return The Class To The Left)
     return () => {
       setCurClass("l-100 z-3");
@@ -61,12 +64,14 @@ function App() {
   // Timer For Previuos Slide
   useLayoutEffect(() => {
     let classTimer = null;
-    // Set The Previous On The Screen For A While
-    setPrevClass("l-0 z-1");
-    classTimer = setTimeout(() => {
-      // Take The ELement To The Right
-      setPrevClass("l-100 z-1 d-none");
-    }, 1000);
+    if (!initialRender) {
+      // Set The Previous On The Screen For A While
+      setPrevClass("l-0 z-1");
+      classTimer = setTimeout(() => {
+        // Take The ELement To The Right
+        setPrevClass("l-100 z-1 d-none");
+      }, 1000);
+    }
     // That Runs After Each Re-render (Return The Element To Original Place)
     return () => {
       setPrevClass("l-0 z-1");
@@ -82,6 +87,8 @@ function App() {
       setToggleSide(true);
     }
   }
+
+  console.log(curEle);
 
   return (
     <Container fluid className={"overflow-hidden position-relative"}>
@@ -135,47 +142,47 @@ function App() {
             className={
               initialRender
                 ? "l-0 z-4"
-                : curEle === "Home"
+                : curEle == "Home"
                 ? curClass
                 : prevEle === "Home"
                 ? prevClass
-                : ""
+                : "d-none"
             }
           />
 
           <About
             className={`${
               initialRender
-                ? "l-100 z-1"
+                ? "d-none"
                 : curEle === "About"
                 ? curClass
                 : prevEle === "About"
                 ? prevClass
-                : ""
+                : "d-none"
             }`}
           />
 
           <Portfolio
             className={`${
               initialRender
-                ? "l-100 z-1"
+                ? "d-none"
                 : curEle === "Portfolio"
                 ? curClass
                 : prevEle === "Portfolio"
                 ? prevClass
-                : ""
+                : "d-none"
             }`}
           />
 
           <Contact
             className={`${
               initialRender
-                ? "l-100 z-1"
+                ? "d-none"
                 : curEle === "Contact"
                 ? curClass
                 : prevEle === "Contact"
                 ? prevClass
-                : ""
+                : "d-none"
             }`}
           />
         </Main>

@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
-import { useTheme } from "../contexts/ThemeProvider";
-import Frame from "./homeComponents/Frame";
-import Landing from "./homeComponents/Landing";
+import { useTheme } from "../../contexts/ThemeProvider";
+import Frame from "./Frame";
+import Landing from "./Landing";
 import { memo } from "react";
 
 // eslint-disable-next-line
