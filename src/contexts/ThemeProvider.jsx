@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { useLocalStorage } from "../customeHooks/useLocalStorage";
+import { createContext, useContext } from "react";
+import { useLocalStorage } from "../customHooks/useLocalStorage";
 
 const context = createContext();
 const WEBSITE_COLORS = ["orange", "blue", "turquoise", "red", "purple"];
