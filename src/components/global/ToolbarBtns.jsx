@@ -10,7 +10,7 @@ function ToolbarBtns({ onToggle }) {
   return (
     <Stack gap={2} className="w-25">
       <Button
-        className={`rounded-circle w-custome main-transition fs-5 ${
+        className={`rounded-circle w-custome main-transition d-flex justify-content-center align-items-center fs-5 ${
           isDarkMode ? "my-dark-2" : "my-light-2"
         }`}
         onClick={() => onToggle((value) => !value)}
@@ -18,7 +18,7 @@ function ToolbarBtns({ onToggle }) {
         <FontAwesomeIcon icon={faGear} className="rot color-inherit" />
       </Button>
       <Button
-        className={`rounded-circle w-custome main-transition fs-5 ${
+        className={`rounded-circle w-custome main-transition d-flex justify-content-center align-items-center fs-5 ${
           isDarkMode ? "my-dark-2" : "my-light-2"
         }`}
         onClick={() => setIsDarkMode((mode) => !mode)}
