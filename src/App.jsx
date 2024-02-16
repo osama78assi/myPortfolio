@@ -19,6 +19,7 @@ import {
 let initialRender = 1;
 
 function App() {
+  // Sidebar
   const [toggleSide, setToggleSide] = useState(true);
   const [showBtn, setShowBtn] = useState(false);
   // Keep Track Of The Element
@@ -40,7 +41,7 @@ function App() {
     }
     window.addEventListener("resize", handelMedia);
     handelMedia();
-    setCurClass("l-0 z-4")
+    setCurClass("l-0 z-4");
     return () => window.removeEventListener("resize", handelMedia);
   }, []);
 
@@ -70,7 +71,7 @@ function App() {
       classTimer = setTimeout(() => {
         // Take The ELement To The Right
         setPrevClass("l-100 z-1 d-none");
-      }, 1000);
+      }, 500);
     }
     // That Runs After Each Re-render (Return The Element To Original Place)
     return () => {
@@ -79,18 +80,21 @@ function App() {
     };
   }, [prevEle]);
 
-  function handelCloseNav(e) {
+  function handelCloseBars(e) {
     if (e.target.closest(".sidebar-toggler")) {
+      return;
+    }
+    if (e.target.closest(".tool")) {
       return;
     }
     if (toggleSide == false) {
       setToggleSide(true);
     }
+    
   }
 
   return (
-    <Container fluid className={"overflow-x-hidden position-relative"}>
-      <Toolbar />
+    <Container fluid className={"overflow-hidden position-relative"}>
       <Row className="vh-100">
         <Sidebar
           act={curEle}
@@ -133,7 +137,8 @@ function App() {
           </Navigation>
         </Sidebar>
 
-        <Main fun={handelCloseNav}>
+        <Main fun={handelCloseBars}>
+          <Toolbar />
           {showBtn && <SidebarToggler onToggle={setToggleSide} />}
 
           <Home

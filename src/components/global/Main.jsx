@@ -17,7 +17,7 @@ function Main({ children, fun }) {
   return (
     <Col
       ref={refEle}
-      className={`main-transition h-100 position-relative ${
+      className={`main-transition h-100 overflow-hidden position-relative ${
         isDarkMode ? "my-dark-1" : "my-light-1"
       }`}
     >

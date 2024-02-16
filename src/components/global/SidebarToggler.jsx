@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function SidebarToggler({ onToggle }) {
   return (
     <span
-      className="sidebar-toggler bg-secondary p-1 opacity-25 opacity-h-100 rounded-2 position-absolute main-transition "
+      className="sidebar-toggler bg-secondary p-1 opacity-25 opacity-h-100 rounded-2 position-fixed main-transition "
       onClick={() => onToggle((toggle) => !toggle)}
     >
       <FontAwesomeIcon icon={faBars} />

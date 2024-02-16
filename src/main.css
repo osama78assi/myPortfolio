@@ -12,6 +12,25 @@
   --my-purple-1: #ff57b6;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 /* Font */
 
 .font-bold {
@@ -141,12 +160,10 @@
 
 .l-100 {
   left: calc(100% + (3rem) * 0.5);
-  /* animation: left 0.5s ease 0.5s 1; */
 }
 
 .l-0 {
   left: 0 !important;
-  /* animation: left-easy 0.5s ease 0s 1; */
 }
 
 /* Logo And Corners*/
@@ -247,7 +264,7 @@
 }
 
 .hide {
-  right: -155px !important;
+  right: -135px !important;
 }
 
 @media (max-width: 830px) {
@@ -294,7 +311,7 @@
 .tool {
   z-index: 100;
   top: 30px;
-  right: 30px;
+  right: 40px;
 }
 
 .rot {
@@ -318,15 +335,6 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 300px) {
-  .tool {
-    right: 0 !important;
-  }
-  .hide {
-    right: -150px !important;
   }
 }
 
