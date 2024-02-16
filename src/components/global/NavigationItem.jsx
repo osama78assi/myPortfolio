@@ -14,6 +14,7 @@ function NavigationItem({
   const { theme } = useTheme();
   return (
     <Button
+      data-page={title}
       className={`side-btn w-item mx-auto main-transition d-flex justify-content-between ${
         isActive ? `border-${theme}` : ""
       } ${isActive ? `text-${theme}` : "text-inherit"}`}

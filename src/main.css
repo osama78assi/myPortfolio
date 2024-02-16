@@ -12,26 +12,6 @@
   --my-purple-1: #ff57b6;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #ddd;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #333;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 /* Font */
 
 .font-bold {
@@ -114,6 +94,10 @@
 
 .text-purple {
   color: var(--my-purple-1) !important;
+}
+
+.text-wh {
+  color: #ccc;
 }
 
 .text-inherit {
@@ -263,7 +247,7 @@
 }
 
 .hide {
-  right: -150px !important;
+  right: -155px !important;
 }
 
 @media (max-width: 830px) {

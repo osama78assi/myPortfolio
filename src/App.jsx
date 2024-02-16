@@ -88,18 +88,16 @@ function App() {
     }
   }
 
-  console.log(curEle);
-
   return (
-    <Container fluid className={"overflow-hidden position-relative"}>
+    <Container fluid className={"overflow-x-hidden position-relative"}>
       <Toolbar />
       <Row className="vh-100">
         <Sidebar
           act={curEle}
           setAct={setCurEle}
-          className={toggleSide ? "l-n100" : ""}
+          className={`${toggleSide ? "l-n100" : "h-100"}`}
         >
-          <Navigation>
+          <Navigation onToggle={setToggleSide}>
             <NavigationItem
               title={"Home"}
               icon={faHome}
