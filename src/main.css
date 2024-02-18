@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   --my-dark-1: #151515;
   --my-dark-2: #1d1d1d;
+  --my-dark-3: #333;
   --my-light-1: #f3f4fd;
   --my-light-2: #fdfbff;
+  --my-light-3: #ddd;
   --my-red-1: #ff4236;
   --my-orange-1: #ff6e04;
   --my-turquoise-1: #278272;
@@ -24,7 +26,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #777;
 }
 
 /* Handle on hover */
@@ -34,12 +36,12 @@
 /* Font */
 
 .font-bold {
-  font-family: "Caveat", cursive;
+  font-family: "Philosopher", sans-serif;
   font-weight: bold;
 }
 
 .font {
-  font-family: "Caveat", cursive;
+  font-family: "Philosopher", sans-serif;
 }
 
 .fs-1-1 {
@@ -55,6 +57,16 @@
 .my-dark-2 {
   background-color: var(--my-dark-2) !important;
   color: var(--my-light-2) !important;
+}
+
+.my-dark-3 {
+  background-color: var(--my-dark-3) !important;
+  color: var(--my-light-3) !important;
+}
+
+.my-light-3 {
+  background-color: var(--my-light-3) !important;
+  color: var(--my-dark-3) !important;
 }
 
 .my-light-1 {
@@ -141,6 +153,30 @@
 
 .border-purple {
   border-color: var(--my-purple-1) !important;
+}
+
+.border-dark-1 {
+  border-color: var(--my-dark-1) !important;
+}
+
+.border-dark-2 {
+  border-color: var(--my-dark-2) !important;
+}
+
+.border-dark-3 {
+  border-color: var(--my-dark-3) !important;
+}
+
+.border-light-1 {
+  border-color: var(--my-light-1) !important;
+}
+
+.border-light-2 {
+  border-color: var(--my-light-2) !important;
+}
+
+.border-light-3 {
+  border-color: var(--my-light-3) !important;
 }
 
 .main-transition {
@@ -415,10 +451,38 @@
   border: none !important;
 }
 
+/* Popup */
+
+.layout {
+  z-index: 101;
+}
+
+.dark-layout {
+  background-color: #00000080;
+}
+
+.white-layout {
+  background-color: #312b2b4b;
+}
+
 .custom {
-  left: 0.5rem;
-  width: calc(100% - 1rem);
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-height: 400px;
+  overflow: auto;
+  z-index: 102;
+}
+
+.border-none {
+  border: none !important;
+}
+
+@media (max-width: 830px) {
+  .custom {
+    width: 90%;
+  }
 }
 
 @media (max-width: 991px) {

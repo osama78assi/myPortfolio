@@ -3,119 +3,115 @@ import { useTheme } from "../../contexts/ThemeProvider";
 import Project from "./Project";
 import PageTitle from "../global/PageTitle";
 import ProjectTitle from "./ProjectTitle";
-import { memo } from "react";
+import LazyLoad from "./LazyLoad";
+import { memo, useReducer } from "react";
+import Popup from "./Popup";
+import {
+  reactProjects,
+  javaScriptProjects,
+  cssProjects,
+} from "../../helper/projectDetails";
 
-// eslint-disable-next-line
+// The Intial State For The Reducer
+const initialState = {
+  popup: "hidden",
+  title: "",
+  briefIntro: "",
+  projectSrc: "",
+  codeSrc: "",
+  details: [],
+  warnings: [],
+  tools: [],
+};
+
+// Reducer For Updating The Complex State
+function reducer(state, action) {
+  switch (action.type) {
+    case "popup/show":
+      return {
+        popup: "shown",
+        title: action.payload.title,
+        briefIntro: action.payload.briefIntro,
+        projectSrc: action.payload.projectSrc,
+        codeSrc: action.payload.codeSrc,
+        details: action.payload.details,
+        warnings: action.payload.warnings,
+        tools: action.payload.tools,
+      };
+    case "popup/hide":
+      return { ...initialState };
+    default:
+      throw new Error("Unknown Action Type");
+  }
+}
+
 const Portfolio = memo(function Portfolio({ className }) {
   const { isDarkMode } = useTheme();
+  const [projectState, dispatch] = useReducer(reducer, initialState);
   const theClassName = `position-absolute main-transition w-100 h-100 overflow-auto ${className} ${
     isDarkMode ? "my-dark-1" : "my-light-1"
   }`;
+
+  // Action Creator For The Reducer
+  function actionsCreator(type, payload) {
+    if (type === "show") dispatch({ type: "popup/show", payload: payload });
+    else if (type === "hide") dispatch({ type: "popup/hide" });
+    else throw new Error("Unknown Action");
+  }
+
+  /*
+  SIDE NOTE:
+  I Could Use The Helper Function To Create A Unique Key For
+  List Rendering But I Gave Up On The Idea Because The Component
+  Will Get The Class Name When Clicking On The Portfolio Link Which Will
+  Make It Re-render So It Will Generate A New Random Id For The Children
+  Which Will Cause Someting Called Unstable Key. In React Engine When
+  It Will Make The Diffing Operation If The Key Is Defferent It Will Re-render
+  For The Projects And That Called Wasted Renders (Performence Issue) And
+  It Will Ruin The Effect Of Sliding
+  */
+
   return (
-    <Stack className={theClassName} style={{ perspective: "100px" }}>
-      <PageTitle title={"Portfolio"} />
-      <Container fluid className="py-2">
-        <ProjectTitle title={"React JS"} className={"ps-4"} />
-        <Row className="row-gap-2 content">
-          <Project
-            imgSrc={"/fastPizza.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/fastPizza/"}
-            codeUrl={"https://github.com/osama78assi/fastPizza"}
-          />
-          <Project
-            imgSrc={"/worldWise.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/worldWise/"}
-            codeUrl={"https://github.com/osama78assi/worldWise"}
-            details={
-              "This App Use Fake Users Accounts, Just Use The Prefilled Data On The Form To Try"
-            }
-          />
-          <Project
-            imgSrc={"/toDoApp.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/todoApp/"}
-            codeUrl={"https://github.com/osama78assi/todoApp"}
-          />
-          <Project
-            imgSrc={"/movies.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/moviesApp/"}
-            codeUrl={"https://github.com/osama78assi/moviesApp"}
-          />
-          <Project
-            imgSrc={"/quiz.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/quiz/"}
-            codeUrl={"https://github.com/osama78assi/quiz"}
-          />
-        </Row>
-        <ProjectTitle title={"Vanilla JS"} className={"my-5 ps-4"} />
-        <Row className="row-gap-2 content">
-          <Project
-            imgSrc={"/forkify.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/forkifyApp/"}
-            codeUrl={"https://github.com/osama78assi/forkifyApp"}
-          />
-          <Project
-            imgSrc={"/kasper.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/kasper/"}
-            codeUrl={"https://github.com/osama78assi/kasper"}
-          />
-          <Project
-            imgSrc={"/bankistDOM.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/bankistAdvanceDOM/"}
-            codeUrl={"https://github.com/osama78assi/bankistAdvanceDOM"}
-          />
-          <Project
-            imgSrc={"/mapty.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/mapty/"}
-            codeUrl={"https://github.com/osama78assi/mapty"}
-          />
-          <Project
-            imgSrc={"/bankistDashboard.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/bankistDashboard/"}
-            codeUrl={"https://github.com/osama78assi/bankistDashboard"}
-            details={
-              "Use This Data: {js, 1111} Or {jd, 2222} Or {st, 3333} Or {ss, 4444}"
-            }
-          />
-        </Row>
-        <ProjectTitle title={"CSS & Bootstrap"} className={"my-5 ps-4"} />
-        <Row className="row-gap-2 content">
-          <Project
-            imgSrc={"/coders.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/Coders-Arena/"}
-            codeUrl={"https://github.com/osama78assi/Coders-Arena"}
-          />
-          <Project
-            imgSrc={"/bondi.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/Bondi/"}
-            codeUrl={"https://github.com/osama78assi/Bondi"}
-          />
-          <Project
-            imgSrc={"/music.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/music/"}
-            codeUrl={"https://github.com/osama78assi/music"}
-          />
-          <Project
-            imgSrc={"/leon.png"}
-            imgAlt={"project"}
-            projectUrl={"https://osama78assi.github.io/leon/"}
-            codeUrl={"https://github.com/osama78assi/leon"}
-          />
-        </Row>
-      </Container>
-    </Stack>
+    <>
+      <Stack className={theClassName} style={{ perspective: "100px" }}>
+        <PageTitle title={"Portfolio"} />
+        <Container fluid className="py-2">
+          <ProjectTitle title={"React JS"} className={"ps-4"} />
+          <Row className="row-gap-2 content">
+            {Object.keys(reactProjects).map((project) => (
+              <Project
+                key={project}
+                project={reactProjects[project]}
+                actionsCreator={actionsCreator}
+              />
+            ))}
+          </Row>
+          <ProjectTitle title={"Vanilla JS"} className={"my-5 ps-4"} />
+          <LazyLoad>
+            {Object.keys(javaScriptProjects).map((project) => (
+              <Project
+                key={project}
+                project={javaScriptProjects[project]}
+                actionsCreator={actionsCreator}
+              />
+            ))}
+          </LazyLoad>
+          <ProjectTitle title={"CSS & Bootstrap"} className={"my-5 ps-4"} />
+          <LazyLoad>
+            {Object.keys(cssProjects).map((project) => (
+              <Project
+                key={project}
+                project={cssProjects[project]}
+                actionsCreator={actionsCreator}
+              />
+            ))}
+          </LazyLoad>
+        </Container>
+      </Stack>
+      {projectState.popup === "shown" && (
+        <Popup project={projectState} onHide={actionsCreator} onClose={actionsCreator} />
+      )}
+    </>
   );
 });
 

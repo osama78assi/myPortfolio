@@ -18,9 +18,8 @@ function ThemeProvider({ children }) {
 
 function useTheme() {
   const contextValue = useContext(context);
-  if (contextValue === undefined) {
-    throw new Error("Can't Use useTheme Outside Its Component");
-  }
+  if (contextValue === undefined)
+    throw new Error("Can't Use useTheme Outside Its Provider");
   return contextValue;
 }
 

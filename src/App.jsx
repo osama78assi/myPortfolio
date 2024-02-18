@@ -90,7 +90,6 @@ function App() {
     if (toggleSide == false) {
       setToggleSide(true);
     }
-    
   }
 
   return (
