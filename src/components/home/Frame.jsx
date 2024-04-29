@@ -4,13 +4,13 @@ import { useState } from "react";
 
 function Frame() {
   const { theme } = useTheme();
-  const [imgUrl, setImgUrl] = useState("/eazy-myself.JPG");
+  const [imgUrl, setImgUrl] = useState("./eazy-myself.JPG");
   const [blur, setBlur] = useState("blur");
   const [width, setWidth] = useState("300px");
 
   useEffect(() => {
     const element = document.createElement("img");
-    element.src = "/myself.JPG";
+    element.src = "./myself.JPG";
     element.addEventListener("load", function () {
       setImgUrl(element.src);
       setBlur("");
