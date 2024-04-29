@@ -351,8 +351,9 @@
 }
 
 .rot {
-  animation: 0.8s ease 0s infinite;
+  animation: 1s ease 0s infinite;
   animation-direction: normal;
+  animation-timing-function: linear;
 }
 
 .rot:hover {

@@ -59,18 +59,6 @@ const Portfolio = memo(function Portfolio({ className }) {
     else throw new Error("Unknown Action");
   }
 
-  /*
-  SIDE NOTE:
-  I Could Use The Helper Function To Create A Unique Key For
-  List Rendering But I Gave Up On The Idea Because The Component
-  Will Get The Class Name When Clicking On The Portfolio Link Which Will
-  Make It Re-render So It Will Generate A New Random Id For The Children
-  Which Will Cause Someting Called Unstable Key. In React Engine When
-  It Will Make The Diffing Operation If The Key Is Defferent It Will Re-render
-  For The Projects And That Called Wasted Renders (Performence Issue) And
-  It Will Ruin The Effect Of Sliding
-  */
-
   return (
     <>
       <Stack className={theClassName} style={{ perspective: "100px" }}>

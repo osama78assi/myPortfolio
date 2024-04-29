@@ -1,4 +1,41 @@
 const reactProjects = {
+  wildOasis: {
+    imgSrc: "/wildOasis.png",
+    imgAlt: "project",
+    title: "Wild Oasis (Hotel management system)",
+    briefIntro:
+      "hotel management system (employees interface only) for cabins in the wild instead of buildings in the towns",
+    details: [
+      "Accounts system and real authentication with ability to create new users",
+      "full control of adding cabins, guests, bookings and edit all settings (CRUD)",
+      "Clean code, taking care about performance, powerful design patterns and efficient file structure",
+      "Big and complex global & remote state management",
+      "Efficient way of dealing with lack of resources such as (deleting the old images after uploading the new one. Supabase doesn't have like this function in storage)",
+      "Used the lazy loading components according to the the big amount of pages",
+      "Lazy loading images for more user-experience",
+      "A lot of reusable custom hooks and components",
+      "Powerful and multiple charts for dashboard with Rechart",
+      "Ability to search in realtime for guests (Race condition solved)",
+      "Dark mode with best practices",
+      "Pagination for guests and booking",
+      "Used both service side filter with sorting and client side for more user-experience",
+      "Used the most user-friendly effects like fading, collapsing and more. builded from scratch (DOM manipulation)",
+    ],
+    warnings: [
+      "This app use real accounts and only employees can add one so please use this one to give the app a shot",
+      "Email: magolon226@hisotyr.com,Password: lili123#",
+      "Dashboard statistics may show nothing so feel free to add guests and bookings (there is existing guests and you can just add bookings)",
+    ],
+    tools: [
+      "React.js",
+      "Tanstack-React query",
+      "Styled-componenet for CSS",
+      "React Router DOM ",
+      "Supabase service (backend & database)",
+    ],
+    projectUrl: "https://osama78assi.github.io/WildOasis/",
+    codeUrl: "https://github.com/osama78assi/WildOasis",
+  },
   fastPizza: {
     imgSrc: "/fastPizza.png",
     imgAlt: "project",
@@ -89,6 +126,20 @@ const reactProjects = {
     tools: ["React", "CSS"],
     projectUrl: "https://osama78assi.github.io/quiz/",
     codeUrl: "https://github.com/osama78assi/quiz",
+  },
+  weather: {
+    imgSrc: "/weather.png",
+    imgAlt: "project",
+    title: "Weatehr App",
+    briefIntro:
+      "simple weather app where you can search about any country or using your country as default",
+    details: [
+      "classic weather app using the classic way of react, which is class component",
+    ],
+    warnings: [],
+    tools: ["React(Class component)", "CSS"],
+    projectUrl: "https://osama78assi.github.io/weatherApp/",
+    codeUrl: "https://github.com/osama78assi/weatherApp",
   },
 };
 
@@ -217,4 +268,4 @@ const cssProjects = {
   },
 };
 
-export { reactProjects, javaScriptProjects, cssProjects };
+export { cssProjects, javaScriptProjects, reactProjects };

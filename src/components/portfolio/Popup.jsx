@@ -1,4 +1,4 @@
-import { Badge, Button, ListGroup, Stack } from "react-bootstrap";
+import { Badge, Button, Col, ListGroup, Row, Stack } from "react-bootstrap";
 import { useTheme } from "../../contexts/ThemeProvider";
 import getRandId from "../../helper/getRandId";
 import Overlay from "./Overlay";
@@ -22,26 +22,8 @@ function Popup({ project, onHide, onClose }) {
             {project.title}
           </h2>
 
-          <p className="ps-4 mb-0">
-            {project.briefIntro}. You can see the{" "}
-            <a
-              href={project.projectSrc}
-              target="_blank"
-              rel="noreferrer"
-              className={`${isDarkMode ? "text-light" : "text-dark"}`}
-            >
-              App
-            </a>
-            . or the{" "}
-            <a
-              href={project.projectSrc}
-              target="_blank"
-              rel="noreferrer"
-              className={`${isDarkMode ? "text-light" : "text-dark"}`}
-            >
-              Code
-            </a>
-          </p>
+          <p className="ps-4 mb-0">{project.briefIntro}</p>
+
           <h5 className={`py-2 text-center text-${theme}`}>
             Some App Features
           </h5>
@@ -90,6 +72,37 @@ function Popup({ project, onHide, onClose }) {
               </Badge>
             ))}
           </Stack>
+
+          <Row className="gap-2">
+            <Col>
+              <Badge className="w-100 bg-orange fs-6 p-2">
+                <a
+                  href={project.projectSrc}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${
+                    isDarkMode ? "text-light" : "text-dark"
+                  } w-100 d-block`}
+                >
+                  Browse the App
+                </a>
+              </Badge>
+            </Col>
+            <Col>
+              <Badge className="w-100 bg-orange fs-6 p-2">
+                <a
+                  href={project.projectSrc}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${
+                    isDarkMode ? "text-light" : "text-dark"
+                  } w-100 d-block`}
+                >
+                  Browse the Code
+                </a>
+              </Badge>
+            </Col>
+          </Row>
         </Stack>
       </div>
     </>

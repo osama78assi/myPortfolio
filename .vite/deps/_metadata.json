@@ -1,37 +1,37 @@
 {
-  "hash": "42b9206f",
+  "hash": "053e690a",
   "configHash": "97e8eb6f",
-  "lockfileHash": "3987c9ff",
-  "browserHash": "d9274f1a",
+  "lockfileHash": "fd081cb7",
+  "browserHash": "6cd7c065",
   "optimized": {
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "32987751",
-      "needsInterop": true
-    },
-    "react": {
-      "src": "../../node_modules/react/index.js",
-      "file": "react.js",
-      "fileHash": "c0935f03",
+      "fileHash": "beda22e0",
       "needsInterop": true
     },
     "react-bootstrap": {
       "src": "../../node_modules/react-bootstrap/esm/index.js",
       "file": "react-bootstrap.js",
-      "fileHash": "2a73cabe",
+      "fileHash": "214a4406",
       "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "852ba3e0",
+      "needsInterop": true
     },
     "@fortawesome/free-solid-svg-icons": {
       "src": "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "file": "@fortawesome_free-solid-svg-icons.js",
-      "fileHash": "4ac7716b",
+      "fileHash": "b63f91f3",
       "needsInterop": false
     },
     "@fortawesome/react-fontawesome": {
       "src": "../../node_modules/@fortawesome/react-fontawesome/index.es.js",
       "file": "@fortawesome_react-fontawesome.js",
-      "fileHash": "aa9c8942",
+      "fileHash": "d075c8f9",
       "needsInterop": false
     }
   },
