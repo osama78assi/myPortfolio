@@ -1,6 +1,6 @@
 const reactProjects = {
   wildOasis: {
-    imgSrc: "/wildOasis.png",
+    imgSrc: "./wildOasis.png",
     imgAlt: "project",
     title: "Wild Oasis (Hotel management system)",
     briefIntro:
@@ -37,7 +37,7 @@ const reactProjects = {
     codeUrl: "https://github.com/osama78assi/WildOasis",
   },
   fastPizza: {
-    imgSrc: "/fastPizza.png",
+    imgSrc: "./fastPizza.png",
     imgAlt: "project",
     title: "fast pizza",
     briefIntro: "in this app you can order as many as you want from pizza",
@@ -60,7 +60,7 @@ const reactProjects = {
     codeUrl: "https://github.com/osama78assi/fastPizza",
   },
   worldWise: {
-    imgSrc: "/worldWise.png",
+    imgSrc: "./worldWise.png",
     imgAlt: "project",
     title: "world wise",
     briefIntro:
@@ -83,7 +83,7 @@ const reactProjects = {
     codeUrl: "https://github.com/osama78assi/worldWise",
   },
   toDo: {
-    imgSrc: "/toDoApp.png",
+    imgSrc: "./toDoApp.png",
     imgAlt: "project",
     title: "todo application",
     briefIntro: "you can schedule your daily tasks using groups feature",
@@ -102,7 +102,7 @@ const reactProjects = {
     codeUrl: "https://github.com/osama78assi/todoApp",
   },
   movies: {
-    imgSrc: "/movies.png",
+    imgSrc: "./movies.png",
     imgAlt: "project",
     title: "Movies App",
     briefIntro: "you can search about almost any film using IMDB API",
@@ -117,7 +117,7 @@ const reactProjects = {
     codeUrl: "https://github.com/osama78assi/moviesApp",
   },
   quiz: {
-    imgSrc: "/quiz.png",
+    imgSrc: "./quiz.png",
     imgAlt: "project",
     title: "Quiz App",
     briefIntro: "simple React quiz app",
@@ -128,7 +128,7 @@ const reactProjects = {
     codeUrl: "https://github.com/osama78assi/quiz",
   },
   weather: {
-    imgSrc: "/weather.png",
+    imgSrc: "./weather.png",
     imgAlt: "project",
     title: "Weatehr App",
     briefIntro:
@@ -145,7 +145,7 @@ const reactProjects = {
 
 const javaScriptProjects = {
   forkify: {
-    imgSrc: "/forkify.png",
+    imgSrc: "./forkify.png",
     imgAlt: "project",
     title: "Forkify App",
     briefIntro: "here you can search over 10.000 recipes, save your recipes",
@@ -165,7 +165,7 @@ const javaScriptProjects = {
     codeUrl: "https://github.com/osama78assi/forkifyApp",
   },
   kasper: {
-    imgSrc: "/kasper.png",
+    imgSrc: "./kasper.png",
     imgAlt: "project",
     title: "Kasper",
     briefIntro: "one page templete",
@@ -176,7 +176,7 @@ const javaScriptProjects = {
     codeUrl: "https://github.com/osama78assi/kasper",
   },
   bankistDOM: {
-    imgSrc: "/bankistDOM.png",
+    imgSrc: "./bankistDOM.png",
     imgAlt: "project",
     title: "Bankist Application",
     briefIntro: "normal one page template",
@@ -192,7 +192,7 @@ const javaScriptProjects = {
     codeUrl: "https://github.com/osama78assi/bankistAdvanceDOM",
   },
   mapty: {
-    imgSrc: "/mapty.png",
+    imgSrc: "./mapty.png",
     imgAlt: "project",
     title: "Mapty Application",
     briefIntro: "here you can plan to your next journey using the map",
@@ -207,7 +207,7 @@ const javaScriptProjects = {
     codeUrl: "https://github.com/osama78assi/mapty",
   },
   bankistDashboard: {
-    imgSrc: "/bankistDashboard.png",
+    imgSrc: "./bankistDashboard.png",
     imgAlt: "project",
     title: "Bankist Dashboard",
     briefIntro: "simple dashboard for fake bank interface",
@@ -223,7 +223,7 @@ const javaScriptProjects = {
 
 const cssProjects = {
   coders: {
-    imgSrc: "/coders.png",
+    imgSrc: "./coders.png",
     imgAlt: "project",
     title: "Coders Arena",
     briefIntro: "noraml web page",
@@ -234,7 +234,7 @@ const cssProjects = {
     codeUrl: "https://github.com/osama78assi/Coders-Arena",
   },
   bondi: {
-    imgSrc: "/bondi.png",
+    imgSrc: "./bondi.png",
     imgAlt: "project",
     title: "Bondi",
     briefIntro: "simple web page",
@@ -245,7 +245,7 @@ const cssProjects = {
     codeUrl: "https://github.com/osama78assi/Bondi",
   },
   music: {
-    imgSrc: "/music.png",
+    imgSrc: "./music.png",
     imgAlt: "project",
     title: "Music Dashboard",
     briefIntro: "styling fake music dashboard",
@@ -256,7 +256,7 @@ const cssProjects = {
     codeUrl: "https://github.com/osama78assi/music",
   },
   leon: {
-    imgSrc: "/leon.png",
+    imgSrc: "./leon.png",
     imgAlt: "project",
     title: "Leon",
     briefIntro: "simple web page",
