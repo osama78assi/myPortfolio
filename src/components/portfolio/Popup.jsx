@@ -91,7 +91,7 @@ function Popup({ project, onHide, onClose }) {
             <Col>
               <Badge className="w-100 bg-orange fs-6 p-2">
                 <a
-                  href={project.projectSrc}
+                  href={project.codeSrc}
                   target="_blank"
                   rel="noreferrer"
                   className={`${
