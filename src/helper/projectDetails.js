@@ -409,7 +409,7 @@ const reactProjects = {
       "Used the most popular algorithm for finding the shortest path (A*)"
     ],
     warnings: [],
-    tools: ["React", "React Router DOM", "CSS", "Tailwind CSS", "Django python"],
+    tools: ["React", "Redux", "React Router DOM", "CSS", "Tailwind CSS", "Django python"],
     projectUrl: "https://osama78assi.pythonanywhere.com",
     codeUrl: "https://github.com/osama78assi/BIA501Interface"
   },

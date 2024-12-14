@@ -317,6 +317,9 @@
   .w-item {
     width: 100%;
   }
+  .header-p-top {
+    padding-top: 1rem;
+  }
 }
 
 /* Theme Bar */

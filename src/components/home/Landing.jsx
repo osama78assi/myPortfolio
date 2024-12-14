@@ -4,7 +4,7 @@ function Landing() {
   const { theme } = useTheme();
   return (
     <div className="px-3">
-      <h1 className="mb-3 main-transition">
+      <h1 className="mb-3 header-p-top main-transition">
         Hello, My Name Is{" "}
         <span className={`font-bold fs-2 text-${theme} main-transition`}>
           Osama Assi
