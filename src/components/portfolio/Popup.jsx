@@ -14,7 +14,10 @@ function Popup({ project, onHide, onClose }) {
           isDarkMode ? "my-dark-3" : "my-light-3"
         }`}
       >
-        <Button className="my-btn mb-2" onClick={() => onHide("hide")}>
+        <Button
+          className={`my-btn mb-2 left-0 top-0 position-sticky z-1`}
+          onClick={() => onHide("hide")}
+        >
           ✖
         </Button>
         <Stack className="px-1" gap={2}>
@@ -75,28 +78,24 @@ function Popup({ project, onHide, onClose }) {
 
           <Row className="gap-2">
             <Col>
-              <Badge className="w-100 bg-orange fs-6 p-2">
+              <Badge className={`w-100 bg-${theme} fs-6 p-2`}>
                 <a
                   href={project.projectSrc}
                   target="_blank"
                   rel="noreferrer"
-                  className={`${
-                    isDarkMode ? "text-light" : "text-dark"
-                  } w-100 d-block`}
+                  className={`text-light w-100 d-block`}
                 >
                   Browse the App
                 </a>
               </Badge>
             </Col>
             <Col>
-              <Badge className="w-100 bg-orange fs-6 p-2">
+              <Badge className={`w-100 bg-${theme} fs-6 p-2`}>
                 <a
                   href={project.codeSrc}
                   target="_blank"
                   rel="noreferrer"
-                  className={`${
-                    isDarkMode ? "text-light" : "text-dark"
-                  } w-100 d-block`}
+                  className={`text-light w-100 d-block`}
                 >
                   Browse the Code
                 </a>

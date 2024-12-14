@@ -4,7 +4,7 @@ import { useTheme } from "../../contexts/ThemeProvider";
 function Ranges() {
   const { theme, isDarkMode } = useTheme();
   return (
-    <Stack gap={3} className="px-5">
+    <Stack gap={3} className="p-5">
       <div>
         <div className="d-flex justify-content-between main-transition mb-2">
           <span>HTML</span>
@@ -46,7 +46,20 @@ function Ranges() {
       </div>
       <div>
         <div className="d-flex justify-content-between main-transition mb-2">
-          <span>JS</span>
+          <span>JavaScript</span>
+          <span>85%</span>
+        </div>
+        <ProgressBar
+          variant={theme}
+          now={85}
+          className={`h-10 main-transition ${
+            isDarkMode ? "my-dark-2" : "bg-secondary"
+          }`}
+        />
+      </div>
+      <div>
+        <div className="d-flex justify-content-between main-transition mb-2">
+          <span>TypeScript</span>
           <span>80%</span>
         </div>
         <ProgressBar
@@ -65,6 +78,19 @@ function Ranges() {
         <ProgressBar
           variant={theme}
           now={85}
+          className={`h-10 main-transition ${
+            isDarkMode ? "my-dark-2" : "bg-secondary"
+          }`}
+        />
+      </div>
+      <div>
+        <div className="d-flex justify-content-between main-transition mb-2">
+          <span>Python - Django</span>
+          <span>65%</span>
+        </div>
+        <ProgressBar
+          variant={theme}
+          now={65}
           className={`h-10 main-transition ${
             isDarkMode ? "my-dark-2" : "bg-secondary"
           }`}
